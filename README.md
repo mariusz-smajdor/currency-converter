@@ -1,5 +1,11 @@
 # Currency converter
 
+<img src="logo192.png" alt="logo">
+
+## Demo 
+
+https://mariusz-smajdor.github.io/currency-converter/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
