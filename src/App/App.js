@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Form } from "./Form";
+import { Info } from "./Info";
 import { currencies } from "./currencies";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Form calculateResult={calculateResult} result={result} />
+      <Info />
     </div>
   );
 }
