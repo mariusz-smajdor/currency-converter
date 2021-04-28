@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { currencies } from "./currencies";
+import { currencies } from "../currencies";
+import { Result } from "./Result";
 import "./style.css";
 
-export const Form = () => {
+export const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState(currencies[0].short);
 
   const onSubmit = (event) => {
     event.preventDefault();
+
+    calculateResult(amount, currency);
   };
 
   return (
@@ -32,12 +35,16 @@ export const Form = () => {
           onChange={({ target }) => setCurrency(target.value)}
         >
           {currencies.map((currency) => (
-            <option key={currency.short}>{currency.name}</option>
+            <option key={currency.short} value={currency.short}>
+              {currency.name}
+            </option>
           ))}
         </select>
       </label>
       <button className="form__submit">Przelicz</button>
-      <p className="form__result"></p>
+      <p className="form__result">
+        <Result result={result} />
+      </p>
     </form>
   );
 };
