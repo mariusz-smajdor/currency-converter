@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
+import { Timer } from "./Timer";
 import "./style.css";
 
 export const Form = ({ calculateResult, result }) => {
@@ -15,9 +16,10 @@ export const Form = ({ calculateResult, result }) => {
 
   return (
     <form className="form" onSubmit={onSubmit}>
-      <h1 className="form__header">Przelicznik walut</h1>
+      <Timer />
+      <h1 className="form__header"> Przelicznik walut </h1>{" "}
       <label className="form__label">
-        <span className="form__labelText">Chcę wymienić:</span>
+        <span className="form__labelText"> Chcę wymienić: </span>{" "}
         <input
           value={amount}
           onChange={({ target }) => setAmount(target.value)}
@@ -26,25 +28,27 @@ export const Form = ({ calculateResult, result }) => {
           step="0.01"
           placeholder="kwota w pln"
         />
-      </label>
+      </label>{" "}
       <label className="form__label">
-        <span className="form__labelText">Chcę otrzymać:</span>
+        <span className="form__labelText"> Chcę otrzymać: </span>{" "}
         <select
           className="form__field"
           value={currency}
           onChange={({ target }) => setCurrency(target.value)}
         >
+          {" "}
           {currencies.map((currency) => (
             <option key={currency.short} value={currency.short}>
-              {currency.name}
+              {" "}
+              {currency.name}{" "}
             </option>
-          ))}
-        </select>
-      </label>
-      <button className="form__submit">Przelicz</button>
+          ))}{" "}
+        </select>{" "}
+      </label>{" "}
+      <button className="form__submit"> Przelicz </button>{" "}
       <p className="form__result">
-        <Result result={result} />
-      </p>
+        <Result result={result} />{" "}
+      </p>{" "}
     </form>
   );
 };
