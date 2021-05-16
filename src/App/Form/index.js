@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { Timer } from "./Timer";
-import "./style.css";
+import { Wrapper, Header, Label, LabelText, Input, Button } from "./styled";
 
 export const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = useState("");
@@ -15,40 +15,35 @@ export const Form = ({ calculateResult, result }) => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <Wrapper onSubmit={onSubmit}>
       <Timer />
-      <h1 className="form__header"> Przelicznik walut </h1>{" "}
-      <label className="form__label">
-        <span className="form__labelText"> Chcę wymienić: </span>{" "}
-        <input
+      <Header> Przelicznik walut </Header>
+      <Label>
+        <LabelText> Chcę wymienić: </LabelText>
+        <Input
           value={amount}
           onChange={({ target }) => setAmount(target.value)}
-          className="form__field"
           type="number"
           step="0.01"
           placeholder="kwota w pln"
         />
-      </label>{" "}
-      <label className="form__label">
-        <span className="form__labelText"> Chcę otrzymać: </span>{" "}
-        <select
-          className="form__field"
+      </Label>
+      <Label>
+        <LabelText>Chcę otrzymać:</LabelText>
+        <Input
+          as="select"
           value={currency}
           onChange={({ target }) => setCurrency(target.value)}
         >
-          {" "}
           {currencies.map((currency) => (
             <option key={currency.short} value={currency.short}>
-              {" "}
-              {currency.name}{" "}
+              {currency.name}
             </option>
-          ))}{" "}
-        </select>{" "}
-      </label>{" "}
-      <button className="form__submit"> Przelicz </button>{" "}
-      <p className="form__result">
-        <Result result={result} />{" "}
-      </p>{" "}
-    </form>
+          ))}
+        </Input>
+      </Label>
+      <Button>Przelicz</Button>
+      <Result result={result} />
+    </Wrapper>
   );
 };

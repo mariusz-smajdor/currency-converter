@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import { Clock } from "./styled";
 
 export const Timer = () => {
   const [date, setDate] = useState(new Date());
@@ -15,7 +15,7 @@ export const Timer = () => {
   });
 
   return (
-    <p className="timer">
+    <Clock>
       Dzisiaj jest{" "}
       {date.toLocaleTimeString(undefined, {
         weekday: "long",
@@ -26,6 +26,6 @@ export const Timer = () => {
         minute: "numeric",
         hour: "numeric",
       })}
-    </p>
+    </Clock>
   );
 };
