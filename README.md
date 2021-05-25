@@ -2,9 +2,17 @@
 
 <img src="logo192.png" alt="logo">
 
-## Demo 
+## Demo
 
 https://mariusz-smajdor.github.io/currency-converter/
+
+## Project includes
+
+- Immutability convention
+- useState, useEffect
+- Custom hooks
+- Styled components
+- Downloading data from API with axios method
 
 ## Getting Started with Create React App
 
