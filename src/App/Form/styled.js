@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.form`
   display: grid;
   gap: 20px;
-  border-bottom: 2px solid ${({ theme }) => theme.color.main};
 `;
 
 export const Header = styled.h1`
@@ -52,3 +51,22 @@ export const Button = styled.button`
   }
 `;
 
+export const Loading = styled.div`
+  color: ${({ theme }) => theme.color.main};
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+`;
+
+export const Failure = styled.div`
+  color: ${({ theme }) => theme.color.error};
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+`;
+
+export const Info = styled.p`
+  font-size: 0.85rem;
+  color: ${({ theme }) => theme.color.secondary};
+  margin: 0;
+`;

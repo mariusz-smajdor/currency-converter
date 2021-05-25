@@ -5,7 +5,7 @@ export const Result = ({ result }) => (
   <ResultText>
     {result !== undefined && (
       <>
-        {result.sourceAmount} PLN = {result.targetAmount.toFixed(2)}{" "}
+        {result.sourceAmount} EUR = {result.targetAmount.toFixed(2)}{" "}
         {result.currency}
       </>
     )}
